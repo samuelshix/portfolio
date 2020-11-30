@@ -31,6 +31,8 @@ main {
   margin-left: 0;
   padding-left: 8em;
 }
+.personal .websites {}
+
 /**typography**/
 h2 {
   font-family: "Lato", sans-serif ;
@@ -46,7 +48,7 @@ h2 {
 p {
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  color: white;
+  color: black;
   font-size: 1em;
 }
 a {
@@ -66,7 +68,7 @@ h3 {
   font-weight: 300;
   border-radius: 1em;
 }
-#home, #activities, #projects, #resume {
+#home, #activities, #projects, #resume, #about {
   border-right: solid white 4px;
 }
 
@@ -176,7 +178,7 @@ h3 {
   margin-bottom: 1em;
   text-decoration: none;
 }
-.personal body {
+.abouthtml {
   background-image: url(images/profpic.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -510,7 +512,7 @@ h3 {
 }
 
 .pbackground {
-  background: linear-gradient(138deg, rgb(0, 0, 0) 0%, rgb(15, 31, 34) 45%, rgba(28,90,102,1) 66%, rgba(2,186,223,1) 100%);  
+  background: linear-gradient(138deg, rgb(253, 253, 253) 0%, rgb(224, 224, 224) 45%, rgb(230, 230, 230) 66%, rgb(207, 207, 207) 100%);  
   position: relative;
   padding-bottom: 11em;
   left: 0;
@@ -611,6 +613,8 @@ textarea {
 .projects {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 0;
 }
 .projects body{
   background-color: rgb(54, 54, 54);
