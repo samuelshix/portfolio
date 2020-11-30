@@ -129,7 +129,6 @@ h3 {
 }
 .websites p, .designs p {
   margin-bottom: 3em;
-  text-decoration: underline;
   font-size: 1em;
 }
 .aweb {
@@ -266,6 +265,9 @@ h3 {
   }
   .activities .caption {
     background: none;
+  }
+  .activities p {
+    color: white;
   }
 }
 @media (max-width: 785px) {
