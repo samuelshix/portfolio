@@ -1,0 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@media (min-width: 701px) {
+
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+ :root {
+  --clr-accent: rgb(159, 253, 244) ;
+  --clr-primary: rgb(73, 255, 143);
+  --clr-light: rgb(225, 245, 242);
+  --clr-back: #02ffd5;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+body {
+  background-color: rgb(54, 54, 54);
+  z-index: 5;
+}
+
+main {
+  margin-left: 8em;
+  padding-top: 10em;
+}
+.personal main {
+  padding-top: 5em;
+  margin-left: 0;
+  padding-left: 8em;
+}
+/**typography**/
+h2 {
+  font-family: "Lato", sans-serif ;
+  font-weight: 900;
+  font-size: 3.7em;
+  color: var(--clr-accent);
+  margin-bottom: 0em;
+  color: rgb(23, 37, 36);
+  background-color: white;
+  font-style: italic;
+  margin-bottom: .2em;
+}
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: white;
+  font-size: 1em;
+}
+a {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: .9em;
+}
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-size: 7em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+}
+h3 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 300;
+  border-radius: 1em;
+}
+#home, #activities, #projects, #resume {
+  border-right: solid white 4px;
+}
+
+#activities, #projects, #resume {
+  margin-left: 1em;
+  margin-right: 0;
+}
+.topnav a {
+  text-decoration: none;
+  color: white;
+  float: right;
+  padding: 0 1.5em 0 0em;
+  margin: 2em 0em 2em 1em;
+  text-transform: uppercase;
+  transition: .3s;
+}
+.topnav .home { 
+  margin-left: 1em;
+  margin-right: auto;
+}
+.topnav img {
+  width: 70px;
+  margin: 0;
+  filter: opacity(80%);
+  transition: 0.3s;
+}
+.topnav a:hover, .topnav a:focus {
+  color: rgb(196, 195, 195);
+  transform: translate(10px, 5%)
+}
+.topnav {
+  margin-bottom: 5em;
+  padding-bottom: 2em;
+  transition: .3s;
+  position: fixed;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  width: 6.2em;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7035189075630253) 0%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0) 100%);
+}
+.topnav img:hover {
+  filter: brightness();
+}
+
+/**personal**/
+.websites, .designs {
+  padding-left: 8em;
+  padding-top: 6em;
+  padding-bottom: 10em;
+  color: white;
+}
+.designs {
+  margin-bottom: 10em;
+}
+.designs .graphic7 {
+  width: 45%;
+}
+.websites, .designs {
+  background-color: rgba(255, 255, 255, 0.014);
+}
+.websites p, .designs p {
+  margin-bottom: 3em;
+  text-decoration: underline;
+  font-size: 1em;
+}
+.aweb {
+  margin-bottom: 2em;
+}
+
+.websitetitle{
+  width: 25vw;
+}
+.designtitle{
+  width: 25vw;
+}
+  /**width: 5em;
+  border: solid 1px rgb(159, 253, 244);**/
+}
+.personal h3 {
+  font-family: "Lato";
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.3em;
+
+  /**background: white;
+  color: black;
+  padding: .5em;**/
+}
+
+.images img {
+  width: 50%;
+  height: auto;
+  float: left;
+  opacity: .8;
+  transition: .3s;
+}
+.images img:hover {
+  opacity: 1;
+}
+.foodtruck {
+  position: relative;
+  bottom: 3.8em;
+}
+.images p {
+  margin-bottom: 1em;
+  text-decoration: none;
+}
+.personal body {
+  background-image: url(images/profpic.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: 20%;
+  background-repeat: no-repeat;
+}
+.about, .personal .welcome  {
+}
+.about .welcome {
+  font-weight: 100;
+  font-size: 1em;
+  font-family: "Lato";
+  background-color: rgba(0, 0, 0, 0.596);
+  color: white;
+  padding: .5em;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  right: 0;
+  margin: 0;
+}
+.about p {
+  background-color: rgba(255, 255, 255, 0.692);
+  color: black;
+  padding: 1em;
+  padding-top: 2em;
+  font-size: 1em;
+  border-radius: .5em;
+  margin-bottom: 13em;
+  max-width: 500px;
+}
+.about {
+  right: 10%;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1100px) {
+  .about p{
+    width: 300px;
+  }
+  .websitetitle{
+    width: 35vw;
+   }
+   .designtitle{
+    width: 35vw;
+   }
+  #subject {
+    width: 250px;
+  }
+  .footer .col2 .socials {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  .footer .col1 .socials {
+    margin-right: 0;
+  }
+  .icons {
+    margin-left: 2.5em;
+    margin-right: 1em;
+  }
+  footer .col1 {
+    margin-left: 2vw;
+  }
+  footer .copyright {
+    margin-left: 3.5vw;
+    font-size: 1.7em;
+  }
+  .title {
+    font-size: 4em;
+    padding-bottom: .3em;
+    line-height: 8;
+  }
+  .titlesection h1 {
+    font-size: 5em;
+  }
+  .activities .blockchain {
+    flex-direction: column;
+  }
+  .activities .slideshowcontainer {
+    margin: 0;
+  }
+  .activities .hilite .img {
+    padding: 0;
+    width: 50%;
+  }
+  .activities .hilite, .activities .stm {
+    flex-direction: column
+  }
+  .activities .caption {
+    background: none;
+  }
+}
+@media (max-width: 785px) {
+  .topnav {
+    flex-direction: row;
+    width: 100%;
+    height: 10em;
+    background: none;
+  }
+  .topnav a {
+    margin: 4em 1em;
+    background: black;
+    padding: .7em;
+    right: 1em;
+    position: absolute; 
+  }
+  .home, #activities, #projects, #resume {
+    border-right: none;
+  }
+  .topnav a:hover, .topnav a:focus {
+    color: black;
+    background: white;
+    border-right: none;
+  }
+  .topnav .home:hover {
+    background: none;
+  }
+  .topnav .activities-button {
+    right: 9em;
+  }
+  .topnav .home{
+    margin: 2em 2em;
+    position: relative;
+    right: 0;
+    background: none;
+  }
+  .about .welcome{
+    top: -1em;
+  }
+  .about {
+    top: 15em;
+    right: 10em;
+    width: 10em;
+  }
+  .websitetitle, .designtitle{
+    width: 100%;
+    font-size: 3em;
+   }
+  .images img {
+    width: 100%;
+  }
+  .images h2 {
+    font-size: 2em;
+  }
+  .alanna img, .foodtruck img {
+    margin-bottom: 7em;
+  }
+  .personal body {
+    background-size: 150%;
+    background-position-x: -0vw;
+  }
+  footer .copyright{
+    font-size: 1.5em;
+    bottom: 9em;
+  }
+  .container a {
+    font-size: 2.5em;
+    margin-top: 0em;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  footer .container p {
+    font-size: 1.5em;
+  }
+  .footer .container .socials {
+    font-size: 2em;
+  }
+  .resume main .section img {
+    width: 95%;
+  }
+  .title{
+    font-size: 4em;
+    padding-bottom: .3em;
+  }
+  main {
+    margin: 0;
+  }
+  .activities .hilite .img {
+    width: 100%;
+  }
+  .activities .macy {
+    flex-direction: column;
+  }
+  .activities .macy .shadow {
+    top: -4.5em;;
+    right: -9.5em;
+  }
+  .activities .scioly {
+    flex-direction: column;
+  }
+}
+@media (max-width: 620px) {
+  footer .col1 .container {
+    flex-direction: column;
+  }
+  footer .icons {
+    margin: 0;
+  }
+  footer .cols .container {
+    padding: .7em;
+  }
+  #subject {
+    width: 180px;
+  }
+  .submit {
+    padding: .5em;
+  }
+  footer .col2 {
+    margin: 0 0 0 auto;
+  }
+  footer .col1 {
+    width: 200px;
+  }
+  footer .copyright {
+    font-size: 1em;
+    bottom: 12em;
+    left: 1em;
+  }
+  .resume main .section img {
+    width: 95%;
+  }
+  .titlesection h1 {
+    font-size: 3.5em;
+  }
+  .activities h2 {
+    font-size: 3em;
+  }
+  .activities .fanfundintro {
+    flex-direction: column;
+    width: 20em;
+  }
+  .activities .fanfundintro p {
+    padding-bottom: 1em;
+  }
+  .activities .shadow {
+    height: 40px;
+    width: 100%;
+    right: -.5em;
+    top: -2em;
+  }
+  .activities .macy .button {
+    left: 1em;
+  }
+  .activities .macy .shadow {
+    left: 3em;
+  }
+}
+@media (max-width: 500px) {
+  footer .cols {
+    flex-direction: column;
+  }
+  footer .col2 {
+    margin: 0;
+    width: 100%;
+  }
+  footer .col1 {
+    margin-left: 0;
+  }
+  footer .copyright {
+    bottom: 22.5em;
+    left: 14em;
+    font-size: 1.2em;
+    width: 180px;
+  }
+  input, #subject {
+    width: 50%;
+  }
+  #subject {
+    width: 90%;
+  }
+  .submit {
+    width: 100px;
+    height: 30px;
+  }
+  .footer {
+    padding: .5em;
+  }
+  
+}
+@media (max-width: 400px) {
+  .about {
+    top: 30em;
+  }
+  .about p {
+    width: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7em;
+  }
+  .projects h2 {
+    margin: .5em;
+  }
+  .websites {
+    padding: 1em;
+  }
+  .designs {
+    padding: 1em;
+  }
+  footer .copyright {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    font-size: 1em;
+  }
+  footer {
+    height: 35em;
+  }
+  footer span {
+    width: 100px;
+    margin-right: 2em;
+
+  }
+}
+.about h2 {
+  font-family: "Abril Fatface";
+  color: black;
+  background: none;
+  font-size: 5em;
+  text-shadow: 1px 1px white;
+  margin-bottom: -.3em
+}
+.about {
+  margin-top: 8em;
+  position: absolute;
+}
+.container {
+  margin: 1em;
+}
+
+.pbackground {
+  background: linear-gradient(138deg, rgb(0, 0, 0) 0%, rgb(15, 31, 34) 45%, rgba(28,90,102,1) 66%, rgba(2,186,223,1) 100%);  
+  position: relative;
+  padding-bottom: 11em;
+  left: 0;
+  top: 110vh;
+  z-index: 0;
+}
+
+footer {
+  padding: 2em 2em 0em 2em;
+  margin-top: -3em;
+  background-color: white;
+  position: relative;
+  font-size: .75em;
+  justify-content: center;
+  top: 100%;
+}
+.cols {
+  display: flex;
+  flex-direction: row;
+}
+.copyright {
+  margin-left: 16%;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2em;
+  position: relative;
+  bottom: 5em;
+  color: rgb(83, 83, 83);
+  opacity: 30%;
+  width: 15em;
+}
+
+footer span {
+  display: block;
+}
+footer a {
+  color: rgb(161, 161, 161);
+  font-size: 3.5em;
+  text-decoration: none;
+  padding: .1em;
+  z-index: 1;
+  transition: .5s;
+}
+footer a:hover {
+  color: rgb(66, 66, 66);
+}
+.col1, .col2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.col1 {
+  margin: 0 auto 0 15%;
+}
+.col2 {
+  margin: 0 15% 0 auto;  
+}
+.footer .socials {
+  font-weight: 900;
+  font-size: 3em;
+  text-transform: uppercase;
+  bottom: 5em;
+  margin-right: 1.9em;
+  color: rgba(141, 141, 141, 0.733);
+  z-index: 0;
+}
+label, input, textarea {
+  font-family: "Lato";
+  display: block;
+  border: none;
+  background-color: rgb(211, 211, 211);
+  margin: .2em 0;
+  border-radius: .5em;
+  padding: .5em;
+  transition: .3s;
+}
+.submit:hover {
+  background-color: rgb(94, 94, 94);
+  color: white;
+}
+input:hover, textarea:hover {
+  background-color: rgb(255, 255, 255)
+}
+.col2 .container, .col1 .container {
+  background-color: rgb(223, 223, 223);
+  padding: 1em 1em;
+}
+.col2 .container {
+  height: 240px;
+}
+.col1 .container {
+  display: flex;
+  flex-direction: row;
+}
+textarea {
+  width: 350px;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+.projects body{
+  background-color: rgb(54, 54, 54);
+}
+.projects body {
+  display: flex;
+  flex-direction: column;
+}
+.projects main {
+  margin-bottom: 20em;
+
+}
+.projects h1 {
+  margin-bottom: -4.5em;
+  padding-bottom: .5em;
+  margin-left: 1em;
+  z-index: 999;
+  font-size: 5em;
+  text-shadow: 1px 1px var(--clr-primary);
+}
+.background {
+  margin-top: 2.3em;
+  padding-top: 11em;
+  padding-bottom: 0em;
+  margin-left: 2em;
+}
+.background img {
+  width: 80%;
+}
+.projects main {
+  padding: 0;
+}
+.projects main p {
+  margin-bottom: 1em;
+  color: rgb(54, 54, 54);
+  background-color: var(--clr-accent);
+  font-weight: 300;
+  padding: .5em;
+}
+/* activities */
+.activities .titlesection {
+  padding-bottom: 1em;
+  margin-bottom: 3em;
+}
+.activities main p {
+  max-width: 40em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+.blockchain, .stm, .macy {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5em 1.5em 7em 1.5em;
+}
+.fanfundintro {
+  display: flex;
+  flex-direction: row;
+}
+.fanfundintro a, .button {
+  background: white;
+  color: rgb(216, 154, 22);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .3em 2em .3em 2em;
+  text-align: center;
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 1.6em;
+  transition: .3s;
+  z-index: 1;
+  /**box-shadow: .3em .3em 0 rgb(216, 154, 22);**/
+}
+main .shadow {
+  height: 90px;
+  width: 370px;
+  top: .5em;
+  right: 10.1em;
+  background-color: rgb(216, 154, 22);
+  position: relative;
+  z-index: 0;
+  transition: .3s;
+}
+.fanfundintro a:hover, .button:hover {
+  color: white;
+  background: rgb(216, 154, 22);
+}
+.fanfundintro a:hover + .shadow, .button:hover + .shadow {
+  background: white;
+}
+.fanfundintro{
+  max-width: 40em;
+}
+.fanfundintro p {
+  margin-bottom: 0 !important;
+  padding-bottom: 0;
+}
+.slideshowcontainer {
+  max-width: 40em;
+  position: relative;
+  margin: auto;
+}
+.slideshow {
+  background: rgba(255, 255, 255, 0.027);
+  padding: 1em;
+}
+.slides {
+  display: none;
+}
+#caption {
+  padding: 0;
+  margin: 0 1em 1em 0;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: .6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.next:hover, .prev:hover {
+  background-color: rgba(0, 0, 0, 0.705);
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: #bbb;
+  display: inline-block;
+  transition: .6s ease;
+  position: relative;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+.hilite, .scioly {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1.5em 1.5em 7em 1.5em;
+}
+
+.caption{
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.123);
+  border-radius: 0 0 1em 1em;
+}
+.hilite .img {
+  margin: 0 0em 0 0em;
+  padding: 2em;
+  width: 30%;
+}
+.stm img, .scioly img {
+  max-width: 35em;
+  padding-right: 3em;
+}
+.stm .caption {
+  width: 100%;
+  margin: 0;
+}
+.macyintro {
+  width: 300px;
+  text-align: center;
+}
+.macy .button {
+  height: 80px;
+  color: red;
+  min-width: 290px;
+  position: relative;
+  left: 5em;
+}
+.macy a {
+  width: 300px;
+}
+.macy .shadow {
+  min-width: 290px;
+  max-width: 290px;
+  height: 80px;
+  background-color: red;
+  position: relative;
+  right: 9.3em;
+  top: .7em;
+}
+.macy .button:hover + .shadow {
+  background-color: white;
+}
+.macy .button:hover{
+  background-color: red;
+  color: white;
+}
+/* resume */
+.resume .section img {
+  width: 80%;
+  position: relative;
+  top: 4em;
+}
+
+.resume .link a {
+  color: white;
+  text-decoration: none;
+  padding: 1em 1em 1em 2.7em;
+  margin-left: -2.15em;
+  background: rgb(54, 54, 54);
+  font-weight: 900;
+  transition: .5s;
+}
+.resume .link a:hover{
+  color: rgb(54, 54, 54);
+  background: white;
+}
+.resume h1, .activities h1 {
+  color: rgb(54, 54, 54);
+}
+.titlesection {
+  background: white;
+  width: 100%;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  position: relative;
+}
+.title {
+  width: 50vw;
+  line-height: .9;
+  padding: .4em 0;
+}
+.resume main {
+  margin-bottom: 10em;
+}
+.activities h2 {
+  color: white;
+  background: none;
+}
+/*.projects hr {
+  padding: 0;
+  margin: 0;
+  color: var(--clr-accent);
+  height: .3em;
+  background-color: var(--clr-accent);
+}
+*/
