@@ -26,11 +26,7 @@ main {
   margin-left: 8em;
   padding-top: 10em;
 }
-.personal main {
-  padding-top: 5em;
-  margin-left: 0;
-  padding-left: 8em;
-}
+
 .personal .websites {}
 
 /**typography**/
@@ -327,10 +323,7 @@ h3 {
   .alanna img, .foodtruck img {
     margin-bottom: 7em;
   }
-  .personal body {
-    background-size: 150%;
-    background-position-x: -0vw;
-  }
+
   footer .copyright{
     font-size: 1.5em;
     bottom: 9em;
@@ -512,14 +505,14 @@ h3 {
 }
 
 .pbackground {
-  background: linear-gradient(138deg, rgb(253, 253, 253) 0%, rgb(224, 224, 224) 45%, rgb(230, 230, 230) 66%, rgb(207, 207, 207) 100%);  
   position: relative;
   padding-bottom: 11em;
   left: 0;
-  top: 110vh;
   z-index: 0;
 }
-
+.projects {
+  background: linear-gradient(138deg, rgb(253, 253, 253) 0%, rgb(224, 224, 224) 45%, rgb(230, 230, 230) 66%, rgb(207, 207, 207) 100%);  
+}
 footer {
   padding: 2em 2em 0em 2em;
   margin-top: -3em;
@@ -866,3 +859,16 @@ main .shadow {
   background-color: var(--clr-accent);
 }
 */
+
+
+.portfolio h1{
+  color: black;
+  padding-left: .5em;
+}
+.cryptotitle {
+  color: black;
+  font-family: "Open Sans";
+  font-size: 2em;
+  margin: 2em 0;
+  margin-bottom: .5em;
+}

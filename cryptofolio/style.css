@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+    font-family: "Work Sans", Arial, Helvetica, sans-serif
+}
+body {
+    margin: 0;
+}
+#title {
+    font-weight: 300;
+    border-right: white solid 2px;
+    width: 80px;
+    margin-left: 1em;
+    padding: 0 .2em;
+}
+ h1 {
+    padding: .5em;
+    text-align: center;
+    font-size: 5em;
+    font-weight: 300;
+ }
+ #step1{
+    margin: 1em 2em;
+ }
+ #portfolio {
+     padding: 0;
+ }
+ #title {
+     font-weight: 400;
+ }
+ #btitle {
+     font-weight: 200;
+     text-shadow: 0 0 5px rgb(254, 222, 255), 0 0 10px #f8a7ff, 0 0 80px #f584ff;
+     margin: 0;
+ }
+ .inputs {
+     display: flex;
+     flex-direction: row-reverse;
+     margin: auto;
+ }
+ #totalvalue #coinselector {
+    display:flex; 
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+ }
+ #totalvalue #coinselector div {
+    flex-direction: row;
+    padding: 0;
+    margin: .5em auto;
+ }
+ input {
+    height: 2em;
+    margin: .5em auto;
+    text-transform: capitalize;
+    border-radius: 1em;
+    border: none;
+    padding: 1em;
+    background-color: rgb(240, 240, 240);
+    color: black;
+    transition: .3s;
+}
+input[type="checkbox"] {
+    border: black 1px solid;
+    margin-right: 1em;
+}
+ #totalvalue {
+     background-color: rgb(73, 42, 92);
+     color: white;
+     display: flex;
+     flex-direction: column;
+ }
+#totalvalue .datetitle {
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: .5em;
+    margin-top: 0;
+}
+button {
+    width: 50%;
+    margin: auto;
+    margin-top: 1em;
+    border: none;
+    border-radius: 3em;
+    padding: 1em;
+    background-color: rgb(218, 210, 224);
+    font-weight: 600;
+    font-size: 1em;
+    transition: .3s;
+}
+button:hover, input:hover{
+    background-color: rgb(201, 193, 206);   
+}
+#enteraddrbutton {
+    width: 60%;
+}
+ #totalvalue h3 {
+     text-align: center;
+     margin-top: 0;
+     font-weight: 200;
+     text-decoration: underline;
+ }
+ .coinselectorsection{
+     display: flex;
+     flex-direction: column;
+     margin: 1em;
+     background-color: white;
+     color: black;
+     padding: 1.5em;
+     border-radius: 2em;
+ }
+ .dates {
+     background-color: white;
+    border-radius: 2em;
+    color: black;
+ }
+ .resetbutton {
+     background-color: white;
+     margin-bottom: 2em;
+ }
+ #totalval {
+     font-weight: 500;
+     font-size: 10vw;
+     margin: 0;
+     padding-top: 0;
+ }
+ #val {
+     display: flex;
+     flex-direction: column;
+     background-color: black;
+     color: lightgrey;
+     padding: 0 0 10em 0;
+ }
+
+ #names h3 {
+    font-weight: 300;
+    font-size: 1.5em;
+    padding: 0 1em;
+ }
+ #names h3 span {
+     font-size: 2em;
+ }
+
+#names span{
+    font-weight: 400;
+    color: white;
+}
+div {
+    padding: 1em;
+    width: auto;
+    font-size: 1.05em;
+}
+#wallettitle {
+    font-size: 1.2em;
+    font-weight: 200;
+    text-align: center;
+    margin: 3em 0 1em 0;
+    color: white;
+}
+
+/* footer */
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 2    0px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+    border-radius: .5em;    
+}
+.fa:hover {
+    opacity: 0.7;
+  }
+.fa-twitter {
+    background: #55ACEE;
+  }
+.fa-linkedin {
+    background: #3b80b4;
+}
+.fa-instagram {
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+footer {
+    background: black;
+    padding-left: 2em;
+}
+#chart {
+    width: 50px;
+}

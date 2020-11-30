@@ -1,0 +1,41 @@
+<html class = "portfolio">
+    <head>
+        <link rel="stylesheet" href="css2.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;900&family=Old+Standard+TT:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/5787b10497.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".submit").click(function(){
+                    $("input[type='text'], textarea").val("");
+                })
+            });
+        </script>
+        <meta name="description" content="This website is about Sam Shi">
+        <title>Sam Shi</title>
+    </head>
+
+   <body style="background-color: white;">
+       <h1>Portfolio</h1>
+   </body>
+
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+          if (document.body.scrollTop > 320 || document.documentElement.scrollTop > 320) {
+            document.getElementById("header").style.backgroundColor = "rgba(255,255,255,.8)";
+        } else {
+            document.getElementById("header").style.backgroundColor = "rgba(0,0,0,.8)";
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</html>
