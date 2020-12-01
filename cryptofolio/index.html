@@ -13,7 +13,7 @@
     </head>
     <body>
             <div id = "portfolio">
-                <p id="step1">Wallet addresses for each cryptocurrency is required (more coins coming soon)</p>
+                <p id="step1">Wallet addresses for each cryptocurrency is required <span style="font-size: .7em; display: block;">(more coins coming soon, Safari currently not supported)</span></p>
                 <div id = "totalvalue">
                     <p id = "title">Crypto Portfolio Viewer</p>
                     <div class="inputs">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class="coinselectorsection">
-                            <h3 style="text-decoration: none;">Select coins to add<br>to portfolio:</h3>
+                            <h3 style="text-decoration: none;"><b>Step 1: </b><br>Select coins to add<br>to portfolio:</h3>
                             <div id="coinselector">
                                 <div>
                                     <input type="checkbox" id="addbtc" name="vehicle1" value="BTC">
@@ -152,6 +152,7 @@ var myChart = new Chart(ctx, {
                 var ethaddrselector = document.getElementById("ethwalletaddr")
                 var xtzaddrselector = document.getElementById("xtzwalletaddr")
                 btcaddr = btcaddrselector.value
+                console.log("btc address: "+btcaddr)
                 ethaddr = ethaddrselector.value
                 xtzaddr = xtzaddrselector.value
                 var btctag = document.getElementById("btctag");
@@ -177,9 +178,11 @@ var myChart = new Chart(ctx, {
                     }
                 })
                     // eth wallet API
+                    if(eth.checked) {
                         request('GET','https://cors-anywhere.herokuapp.com/https://api.etherscan.io/api?module=account&action=balance&address=' + ethaddr + '&tag=latest&apikey=' + apikey.ethkey)
                         .then((response) => {
                             var y = JSON.parse(response.target.responseText)
+                            console.log(y)
                             ethval = y.result/1000000000000000000
                             var ethval1 = numberWithCommas((y.result/1000000000000000000).toFixed(2))
                             document.getElementById("eth").innerHTML = ethval1 + " ETH"
@@ -193,12 +196,13 @@ var myChart = new Chart(ctx, {
                                 ethtag.style.display="block";
                             }
                         })
-                    
+                    }
                     // btc wallet API
                     if(btc.checked) {
                     request('GET','https://cors-anywhere.herokuapp.com/https://api.blockcypher.com/v1/btc/main/addrs/' + btcaddr + '/balance')
                         .then((response) => {
                         var z = JSON.parse(response.target.responseText)
+                        console.log(z)
                         btcval = z.final_balance/100000000
                         document.getElementById("btc").innerHTML = btcval + " BTC"
                         totalvalue += btcval * btcprice
@@ -215,10 +219,11 @@ var myChart = new Chart(ctx, {
                 }
             
                     // tezos API
+                if(xtz.checked) {
                     request('GET','https://cors-anywhere.herokuapp.com/https://api.tzstats.com/explorer/account/' + xtzaddr)
                     .then((response) => {
                         var z = JSON.parse(response.target.response)
-                        console.log(response)
+                        console.log(z)
                         xtzval = z.total_balance
                         var xtzval1 = numberWithCommas(z.total_balance.toFixed(2))
                         document.getElementById("xtz").innerHTML = xtzval1 + " XTZ"
@@ -233,7 +238,7 @@ var myChart = new Chart(ctx, {
                             xtztag.style.display="block";
                         }
                         })
-                    
+                }   
 
                     // error handling
                 //     var error = document.getElementById("error");
