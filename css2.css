@@ -170,8 +170,18 @@ h3 {
   opacity: .8;
   transition: .3s;
 }
-.images img:hover {
+.images img:hover, #portfolioimage:hover {
   opacity: 1;
+}
+#portfolioimage {
+  display:flex; 
+  flex-direction:row;
+  width: 70%;
+  opacity: .85;
+  transition: .5s;
+  border: rgb(73, 39, 80) solid 15px;
+  border-radius: 1em;
+  margin-bottom: 3em;
 }
 .foodtruck {
   position: relative;
