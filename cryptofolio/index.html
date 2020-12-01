@@ -27,10 +27,10 @@
                         <div class="coinselectorsection">
                             <h3 style="text-decoration: none;"><b>Step 1: </b><br>Select coins to add<br>to portfolio:</h3>
                             <div id="coinselector">
-                                <div>
+                                <!-- <div>
                                     <input type="checkbox" id="addbtc" name="vehicle1" value="BTC">
                                     <label for="addbtc"> BTC</label><br>
-                                </div>
+                                </div> -->
                                 <div>
                                     <input type="checkbox" id="addeth" name="vehicle2" value="ETH">
                                     <label for="addeth"> ETH</label><br>
@@ -248,21 +248,21 @@ var myChart = new Chart(ctx, {
                 //     }
                 // }
             }
-                var btc = document.getElementById("addbtc")
+                // var btc = document.getElementById("addbtc")
                 var eth = document.getElementById("addeth")
                 var xtz = document.getElementById("addxtz")
             function enterCoin() {
             
                 console.log("enterCoin function")
-                var btcaddrselector = document.getElementById("btcwalletaddr")
+                // var btcaddrselector = document.getElementById("btcwalletaddr")
                 var ethaddrselector = document.getElementById("ethwalletaddr")
                 var xtzaddrselector = document.getElementById("xtzwalletaddr")
                 var button = document.getElementById("enteraddrbutton")
                 var oldbutton = document.getElementById("enterCoin")
                 var txt = document.getElementById("selectaddrtxt")
 
-                var cryptoarray = [btc, eth, xtz]
-                var selectorarray = [btcaddrselector, ethaddrselector, xtzaddrselector]
+                var cryptoarray = [eth, xtz]
+                var selectorarray = [ethaddrselector, xtzaddrselector]
                 
                 for(var i = 0; i < cryptoarray.length; i++) {
                     for(var j = 0; j < selectorarray.length; j++) {
@@ -274,10 +274,10 @@ var myChart = new Chart(ctx, {
                         }
                     }
                 }
-                if(btc.checked) {
-                    btcaddrselector.style.display="block";
-                    console.log("test");
-                }
+                // if(btc.checked) {
+                //     btcaddrselector.style.display="block";
+                //     console.log("test");
+                // }
                 if(eth=="on") {
                     ethaddrselector.style.display="block";
                 }
@@ -291,14 +291,14 @@ var myChart = new Chart(ctx, {
                 var dateselector = document.getElementById("dateselector")
                 var date = dateselector.value
 
-                request('GET','https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/exchange-rates/history?key=' + apikey.nomkey + '&currency=BTC&start=' + date + 'T23%3A00%3A00Z&end=' + date + 'T23%3A59%3A00Z')
-                .then((response) => {
-                    var x = JSON.parse(response.target.responseText)
-                    btcprice = x[0].rate
-                    totalvalue = 0
-                    totalvalue += btcval * btcprice
-                    console.log(1)
-                    console.log(totalvalue)
+                // request('GET','https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/exchange-rates/history?key=' + apikey.nomkey + '&currency=BTC&start=' + date + 'T23%3A00%3A00Z&end=' + date + 'T23%3A59%3A00Z')
+                // .then((response) => {
+                //     var x = JSON.parse(response.target.responseText)
+                //     btcprice = x[0].rate
+                //     totalvalue = 0
+                //     totalvalue += btcval * btcprice
+                //     console.log(1)
+                //     console.log(totalvalue)
 
                 request('GET','https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/exchange-rates/history?key=' + apikey.nomkey + '&currency=ETH&start=' + date + 'T23%3A00%3A00Z&end=' + date + 'T23%3A59%3A00Z')
                 .then((response) => {
@@ -320,9 +320,9 @@ var myChart = new Chart(ctx, {
                     totalvalue = totalvalue.toString()
                     totalvalue = numberWithCommas(parseFloat(totalvalue).toFixed(2))
                     document.getElementById("totalval").innerHTML = "$" + totalvalue
-                }).catch(err => {
-                    console.log(err)
-                })
+                // }).catch(err => {
+                //     console.log(err)
+                // })
                     }).catch(err => {
                         console.log(err)
                     })
@@ -336,7 +336,6 @@ var myChart = new Chart(ctx, {
                 [document.getElementById("addbtc"),
                 document.getElementById("addeth"),
                 document.getElementById("addxtz"),
-                document.getElementById("btcwalletaddr"),
                 document.getElementById("ethwalletaddr"),
                 document.getElementById("xtzwalletaddr")]
                 inputfields.forEach(x=>x.type="reset");
