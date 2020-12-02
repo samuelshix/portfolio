@@ -80,8 +80,10 @@ h3 {
   text-transform: uppercase;
   transition: .3s;
 }
+@media (min-width: 790px) {
 .navbar .about-button{
   font-size: .8em;
+}
 }
 .topnav .home { 
   margin-left: 1em;
