@@ -27,7 +27,6 @@ main {
   padding-top: 10em;
 }
 
-.personal .websites {}
 
 /**typography**/
 h2 {
@@ -72,7 +71,7 @@ h3 {
   margin-left: 1em;
   margin-right: 0;
 }
-.topnav a {
+.topnav a, .topnav.home {
   text-decoration: none;
   color: white;
   float: right;
@@ -91,7 +90,7 @@ h3 {
   filter: opacity(80%);
   transition: 0.3s;
 }
-.topnav a:hover, .topnav a:focus {
+.topnav a:hover, .topnav.home:hover{
   color: rgb(196, 195, 195);
   transform: translate(10px, 5%)
 }
@@ -306,12 +305,17 @@ h3 {
     color: black;
     background: white;
     border-right: none;
+    transform: none;
+    border: black solid 1px;
   }
   .topnav .home:hover {
     background: none;
   }
   .topnav .activities-button {
-    right: 9em;
+    right: 18em;
+  }
+  .topnav .resume-button {
+    right: 10em;
   }
   .topnav .home{
     margin: 2em 2em;
@@ -326,6 +330,9 @@ h3 {
     top: 15em;
     right: 10em;
     width: 10em;
+  }
+  .websites {
+    margin-top: 8em;
   }
   .websitetitle, .designtitle{
     width: 100%;
@@ -469,7 +476,7 @@ h3 {
   }
   
 }
-@media (max-width: 400px) {
+@media (max-width: 490px) {
   .about {
     top: 30em;
   }
@@ -503,6 +510,21 @@ h3 {
     width: 100px;
     margin-right: 2em;
 
+  }
+  .topnav{
+    display: flex;
+    flex-direction: row;
+  }
+  .topnav .activities-button {
+    right: 15em;
+  }
+  .topnav .resume-button {
+    right: 8.5em;
+  }
+  .topnav a {
+    background: none;
+    color: black;
+    font-size: .7em;
   }
 }
 .about h2 {
