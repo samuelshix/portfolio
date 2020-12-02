@@ -75,10 +75,13 @@ h3 {
   text-decoration: none;
   color: white;
   float: right;
-  padding: 0 1.5em 0 0em;
+  padding-right: 1em;
   margin: 2em 0em 2em 1em;
   text-transform: uppercase;
   transition: .3s;
+}
+.navbar .about-button{
+  font-size: .8em;
 }
 .topnav .home { 
   margin-left: 1em;
