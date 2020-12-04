@@ -48,6 +48,10 @@
                                     <input type="checkbox" id="addxtz" name="vehicle3" value="XTZ">
                                     <label for="addxtz"> XTZ</label><br> 
                                 </div>
+                                <div>
+                                    <input type="checkbox" id="addltc" name="vehicle1" value="LTC">
+                                    <label for="addltc"> LTC</label><br>
+                                </div>
                                 <button id="enterCoin" onclick="enterCoin()">Enter</button>
                                 <h3 style=
                                 "text-decoration: none;
@@ -63,6 +67,7 @@
                                 <input type = "text" id = "btcwalletaddr" placeholder = "Bitcoin Wallet Address" style="display: none;">
                                 <input type = "text" id = "ethwalletaddr" placeholder = "Ethereum Wallet Address" style="display: none;">
                                 <input type = "text" id = "xtzwalletaddr" placeholder = "Tezos Wallet Address" style="display: none;">
+                                <input type = "text" id = "ltcwalletaddr" placeholder = "Litecoin Wallet Address" style="display: none;">
                                 <button onclick = "enterAddr()" style="display: none;" id="enteraddrbutton">Enter</button>
                             </div>
                         </div>
@@ -81,6 +86,7 @@
                         <h3 id="btctag" style="display:none;">Bitcoin: <span id = "btc"></span></h3>
                         <h3 id="ethtag" style="display:none;">Ethereum: <span id = "eth"></span></h3>
                         <h3 id="xtztag" style="display:none;">Tezos: <span id = "xtz"></span></h3>
+                        <h3 id="ltctag" style="display:none;">Litecoin: <span id = "ltc"></span></h3>
                     </div>
                 </div>
             </div>
@@ -131,15 +137,11 @@ var myChart = new Chart(ctx, {
             }
 
             var totalvalue = 0  
-            var btcprice = 0
-            var ethprice = 0
-            var xtzprice = 0
-            var btcval = 0
-            var ethval = 0
-            var xtzval = 0
-            var btcaddr = ''
-            var ethaddr = ''   
-            var xtzaddr = ''
+            var btcprice,ethprice,xtzprice,ltcprice = 0
+    
+            var btcval,ethval,xtzval,ltcval = 0
+            
+            var btcaddr,ethaddr,xtzaddr,ltcaddr = ''
 
             var errflag = 0;
 
@@ -366,9 +368,11 @@ var myChart = new Chart(ctx, {
                 [document.getElementById("addbtc"),
                 document.getElementById("addeth"),
                 document.getElementById("addxtz"),
+                document.getElementById("addltc"),
                 document.getElementById("btcwalletaddr"),
                 document.getElementById("ethwalletaddr"),
-                document.getElementById("xtzwalletaddr")]
+                document.getElementById("xtzwalletaddr"),
+                document.getElementById("ltcwalletaddr")]
                 inputfields.forEach(x=>x.type="reset");
                 window.location.reload();
 
