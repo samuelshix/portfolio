@@ -19,18 +19,27 @@
                     <div class="inputs">
                         <div id="innercolumn">
                             <div class = "dates" id="datesid" style="opacity:0;">
-                                <h3 class = "datetitle">Select Date:<p style="font-size: .3em;">(leave blank for current values)</p></h3>
+                                <h4><b>Step 2: <br></b></h4>
+                                <h3 class = "datetitle">
+                                    Select Date:<p style="font-size: .3em;">(leave blank for current values)</p>
+                                </h3>
                                 <input type = "date" id = "dateselector">
                                 <button onclick = "enterDate()" style="width: 100%;">Enter</button>
+                            </div>
+                            <div id="step3" style="opacity:0;">
+                            <h3><b>Step 3:</b> Scroll to view<br> portfolio value</h3>
+                            <div style="position: relative; margin: auto;">
+                                <span id="wavyarrow"></span>
+                            </div>
                             </div>
                         </div>
                         <div class="coinselectorsection">
                             <h3 style="text-decoration: none;"><b>Step 1: </b><br>Select coins to add<br>to portfolio:</h3>
                             <div id="coinselector">
-                                <!-- <div>
+                                <div>
                                     <input type="checkbox" id="addbtc" name="vehicle1" value="BTC">
                                     <label for="addbtc"> BTC</label><br>
-                                </div> -->
+                                </div>
                                 <div>
                                     <input type="checkbox" id="addeth" name="vehicle2" value="ETH">
                                     <label for="addeth"> ETH</label><br>
@@ -148,11 +157,11 @@ var myChart = new Chart(ctx, {
                 var enterCoinButton = document.getElementById("enterCoin")
                 enterCoinButton.style.opacity = "0";
                 dateselector.style.opacity = "1";
+                
                 var btcaddrselector = document.getElementById("btcwalletaddr")
                 var ethaddrselector = document.getElementById("ethwalletaddr")
                 var xtzaddrselector = document.getElementById("xtzwalletaddr")
                 btcaddr = btcaddrselector.value
-                console.log("btc address: "+btcaddr)
                 ethaddr = ethaddrselector.value
                 xtzaddr = xtzaddrselector.value
                 var btctag = document.getElementById("btctag");
@@ -182,7 +191,7 @@ var myChart = new Chart(ctx, {
                         request('GET','https://cors-anywhere.herokuapp.com/https://api.etherscan.io/api?module=account&action=balance&address=' + ethaddr + '&tag=latest&apikey=' + apikey.ethkey)
                         .then((response) => {
                             var y = JSON.parse(response.target.responseText)
-                            console.log(y)
+                            console.log("eth: y")
                             ethval = y.result/1000000000000000000
                             var ethval1 = numberWithCommas((y.result/1000000000000000000).toFixed(2))
                             document.getElementById("eth").innerHTML = ethval1 + " ETH"
@@ -201,8 +210,8 @@ var myChart = new Chart(ctx, {
                     if(btc.checked) {
                     request('GET','https://cors-anywhere.herokuapp.com/https://api.blockcypher.com/v1/btc/main/addrs/' + btcaddr + '/balance')
                         .then((response) => {
+                        console.log(response);
                         var z = JSON.parse(response.target.responseText)
-                        console.log(z)
                         btcval = z.final_balance/100000000
                         document.getElementById("btc").innerHTML = btcval + " BTC"
                         totalvalue += btcval * btcprice
@@ -214,15 +223,41 @@ var myChart = new Chart(ctx, {
                             btctag.style.display="block";
                         }
                         console.log(errflag)
-                    }).catch(err => {
-                    })
-                }
-            
+                        }).catch(err => {
+                        })
+                    }
+                    
+                    if(ltc.checked) {
+                    request('GET','https://cors-anywhere.herokuapp.com/https://api.blockcypher.com/v1/ltc/main/addrs/' + ltcaddr + '/balance')
+                        .then((response) => {
+                        console.log(response);
+                        var z = JSON.parse(response.target.responseText)
+                        ltcval = z.final_balance/100000000
+                        document.getElementById("ltc").innerHTML = ltcval + " LTC"
+                        totalvalue += ltcval * ltcprice
+                        var totalvalue1 = numberWithCommas(totalvalue.toFixed(2))
+                        document.getElementById("totalval").innerHTML = "$" + totalvalue1
+                        if(isNaN(ltcval) || !ltcaddr) {
+                            error.innerHTML = "Error: invalid address";
+                        } else {
+                            ltctag.style.display="block";
+                        }
+                        console.log(errflag)
+                        }).catch(err => {
+                        })
+                    }
                     // tezos API
                 if(xtz.checked) {
-                    request('GET','https://cors-anywhere.herokuapp.com/https://api.tzstats.com/explorer/account/' + xtzaddr)
+                    // fix this: cant get error to show up on empty xtzaddr
+                    // console.log(xtzaddr)
+                    // if(xtzaddr==="") {
+                    //     xtztag.style.display="block";
+                    // }
+                    // xtzaddr=base58.encode(xtzaddr)
+                    request('GET','https://cors-anywhere.herokuapp.com/https://api.tzstats.com/explorer/account/'+xtzaddr)
                     .then((response) => {
                         var z = JSON.parse(response.target.response)
+                        console.log(response)
                         console.log(z)
                         xtzval = z.total_balance
                         var xtzval1 = numberWithCommas(z.total_balance.toFixed(2))
@@ -231,7 +266,8 @@ var myChart = new Chart(ctx, {
                         var totalvalue1 = numberWithCommas(totalvalue.toFixed(2))
                         document.getElementById("totalval").innerHTML = "$" + totalvalue1
                         
-                        if(isNaN(xtzval) || !xtzaddr) {
+                        console.log("THIS IS IT:" + xtzaddr)
+                        if(isNaN(xtzval)) {
                             error.innerHTML = "Error: invalid address";
                             console.log("error!")
                         } else {
@@ -248,21 +284,24 @@ var myChart = new Chart(ctx, {
                 //     }
                 // }
             }
-                // var btc = document.getElementById("addbtc")
+                var btc = document.getElementById("addbtc")
                 var eth = document.getElementById("addeth")
                 var xtz = document.getElementById("addxtz")
+                var ltc = document.getElementById("addltc")
             function enterCoin() {
             
                 console.log("enterCoin function")
-                // var btcaddrselector = document.getElementById("btcwalletaddr")
+                var btcaddrselector = document.getElementById("btcwalletaddr")
                 var ethaddrselector = document.getElementById("ethwalletaddr")
                 var xtzaddrselector = document.getElementById("xtzwalletaddr")
+                var ltcaddrselector = document.getElementById("ltcwalletaddr")
+
                 var button = document.getElementById("enteraddrbutton")
                 var oldbutton = document.getElementById("enterCoin")
                 var txt = document.getElementById("selectaddrtxt")
 
-                var cryptoarray = [eth, xtz]
-                var selectorarray = [ethaddrselector, xtzaddrselector]
+                var cryptoarray = [btc, eth, xtz,ltc]
+                var selectorarray = [btcaddrselector, ethaddrselector, xtzaddrselector,ltcaddrselector]
                 
                 for(var i = 0; i < cryptoarray.length; i++) {
                     for(var j = 0; j < selectorarray.length; j++) {
@@ -274,31 +313,22 @@ var myChart = new Chart(ctx, {
                         }
                     }
                 }
-                // if(btc.checked) {
-                //     btcaddrselector.style.display="block";
-                //     console.log("test");
-                // }
-                if(eth=="on") {
-                    ethaddrselector.style.display="block";
-                }
-                if(xtz=="on") {
-                    xtzaddrselector.style.display="block";
-                    
-                }
-                console.log("a");
+
             }
             function enterDate() {
                 var dateselector = document.getElementById("dateselector")
                 var date = dateselector.value
+                var stepthree = document.getElementById("step3")
+                step3.style.opacity = "1";
 
-                // request('GET','https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/exchange-rates/history?key=' + apikey.nomkey + '&currency=BTC&start=' + date + 'T23%3A00%3A00Z&end=' + date + 'T23%3A59%3A00Z')
-                // .then((response) => {
-                //     var x = JSON.parse(response.target.responseText)
-                //     btcprice = x[0].rate
-                //     totalvalue = 0
-                //     totalvalue += btcval * btcprice
-                //     console.log(1)
-                //     console.log(totalvalue)
+                request('GET','https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/exchange-rates/history?key=' + apikey.nomkey + '&currency=BTC&start=' + date + 'T23%3A00%3A00Z&end=' + date + 'T23%3A59%3A00Z')
+                .then((response) => {
+                    var x = JSON.parse(response.target.responseText)
+                    btcprice = x[0].rate
+                    totalvalue = 0
+                    totalvalue += btcval * btcprice
+                    console.log(1)
+                    console.log(totalvalue)
 
                 request('GET','https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/exchange-rates/history?key=' + apikey.nomkey + '&currency=ETH&start=' + date + 'T23%3A00%3A00Z&end=' + date + 'T23%3A59%3A00Z')
                 .then((response) => {
@@ -320,9 +350,9 @@ var myChart = new Chart(ctx, {
                     totalvalue = totalvalue.toString()
                     totalvalue = numberWithCommas(parseFloat(totalvalue).toFixed(2))
                     document.getElementById("totalval").innerHTML = "$" + totalvalue
-                // }).catch(err => {
-                //     console.log(err)
-                // })
+                }).catch(err => {
+                    console.log(err)
+                })
                     }).catch(err => {
                         console.log(err)
                     })
@@ -336,6 +366,7 @@ var myChart = new Chart(ctx, {
                 [document.getElementById("addbtc"),
                 document.getElementById("addeth"),
                 document.getElementById("addxtz"),
+                document.getElementById("btcwalletaddr"),
                 document.getElementById("ethwalletaddr"),
                 document.getElementById("xtzwalletaddr")]
                 inputfields.forEach(x=>x.type="reset");
